@@ -9,12 +9,6 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding=sys.stdout.encoding, e
 
 import ipaddress
 import subprocess
-import pdb
-
-    
-
-
-    
 import argparse
 ps = argparse.ArgumentParser(description="修改wireguard的peer的AllowedIPs\n主要用来方便用peer的别名来切换公网网段的路由\n不会改变那些未在文件中的定义的网段")
 ps.add_argument("wgIFfile", help="指定wg的设置文件路径")
@@ -169,10 +163,8 @@ for l in rls:
     try:
         ppubk = l.split("\t")[0]
         ips = l.split("\t")[1].split(" ")
-
     except:
        continue
-    #pdb.set_trace()
     for ip in ips:
         if ip:
             ipn = ipaddress.ip_network(ip)
