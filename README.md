@@ -1,0 +1,1 @@
+wireguard路由切换脚本 将特定的网段设置到特定peer的allowedips中 可以用别名指定peer
